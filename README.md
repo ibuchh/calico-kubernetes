@@ -35,7 +35,7 @@ management-ui   management-ui-wzvz4                                   1/1     Ru
 stars           backend-tkjrx                                         1/1     Running   0          24m
 stars           frontend-q4r84                                        1/1     Running   0          24m
 ```
-### Summary
+### _Summary_
 
 To summarize the different resources we created:
 
