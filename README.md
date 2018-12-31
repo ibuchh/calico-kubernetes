@@ -2,16 +2,16 @@
 
 ## Install Claico
 ```
-kubectl apply -f calico.yaml
+kubectl apply -f calico/calico.yaml
 ```
 ## Create Resources
 ```
-kubectl apply -f namespace.yaml
+kubectl apply -f resources/namespace.yaml
 
-kubectl apply -f management-ui.yaml
-kubectl apply -f backend.yaml
-kubectl apply -f frontend.yaml
-kubectl apply -f client.yaml
+kubectl apply -f resources/management-ui.yaml
+kubectl apply -f resources/backend.yaml
+kubectl apply -f resources/frontend.yaml
+kubectl apply -f resources/client.yaml
 ```
 ```
 $ kubectl get pods --all-namespaces
@@ -55,15 +55,15 @@ kubectl get svc -o wide -n management-ui
 ## Apply Network Policies
 
 ```
-kubectl apply -n stars -f default-deny.yaml
+kubectl apply -n stars -f policy/default-deny.yaml
 
-kubectl apply -n client -f default-deny.yaml
+kubectl apply -n client -f policy/default-deny.yaml
 ```
 ## Create Network Policies
 
 ```
-kubectl apply -f allow-ui.yaml
-kubectl apply -f allow-ui-client.yaml
+kubectl apply -f policy/allow-ui.yaml
+kubectl apply -f policy/allow-ui-client.yaml
 ```
 
 Refresh the browser again and check the Network policies in place
@@ -71,8 +71,8 @@ Refresh the browser again and check the Network policies in place
 ## Allow DIrectional Traffic
 
 ```
-kubectl apply -f backend-policy.yaml
-kubectl apply -f frontend-policy.yaml
+kubectl apply -f policy/backend-policy.yaml
+kubectl apply -f policy/frontend-policy.yaml
 ```
 
 Upon refreshing your browser, you should be able to see the network policies in action.
