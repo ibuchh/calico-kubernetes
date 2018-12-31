@@ -1,6 +1,6 @@
 # Instructions
 
-## Install Claico
+## Install Calico
 ```
 kubectl apply -f calico/calico.yaml
 ```
